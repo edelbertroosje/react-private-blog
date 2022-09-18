@@ -2,9 +2,6 @@ import React from "react";
 import {Link, useParams} from "react-router-dom";
 import posts from '../data/posts.json';
 
-
-
-
 function Blog() {
     const {blogId} = useParams();
     const blogs = posts.find((blog) => {
