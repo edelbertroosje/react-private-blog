@@ -9,13 +9,17 @@ function Blog() {
     })
 
     return (
-        <article>
-            <h1>dit is Blog</h1>
-            <h2>{blogs.title}</h2>
-            <h3>{blogs.date}</h3>
-            <p>{blogs.content}</p>
-            <button><Link to="/blogpost">terug naar blogpost</Link></button>
-        </article>
+        <>
+            <article>
+                <h1>dit is Blog</h1>
+                <h2>{blogs.title}</h2>
+                <h3>{blogs.date}</h3>
+                <p>{blogs.content}</p>
+            </article>
+            <article>
+                <button><Link to="/blogpost">terug naar blogpost</Link></button>
+            </article>
+        </>
     );
 }
 

@@ -1,24 +1,13 @@
-import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import React from "react";
 
-function Login(){
-    const [isAuthenticated, toggleIsAuthenticated] = useState(false);
-    console.log(isAuthenticated)
-     // const history = useHistory();
-    //
-    // function isloggedIn(){
-    //     history.push("/")
-    //
-    //
-    // }
+function Login({toggle, isAuth}) {
+
     return (
         <article>
             <h1>Login pagina</h1>
-            <h4>Klik hier om in te loggen</h4>
-        <button
-            type="button"
-            onClick={()=>toggleIsAuthenticated(isAuthenticated)}
-        ><Link to="/">inloggen</Link></button>
+            <h4>Klik hier om {!isAuth ? "in te loggen" : "uit te loggen"}</h4>
+
+                <button onClick={()=> toggle(!isAuth)}>{!isAuth ? "inlogen" : "uitlogen"}</button>
         </article>
     );
 }

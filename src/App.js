@@ -14,17 +14,17 @@ function App() {
 
     return (
         <div>
-            <nav>
+            <nav className="nav">
                 <ul>
                     <li><NavLink to="/">Home</NavLink></li>
                     {isAuthenticated === true && <li><NavLink to="/blogpost">Blogpost</NavLink></li>}
-                    <li><NavLink to="/login">Login</NavLink></li>
+                    <li><NavLink to="/login">{!isAuthenticated ? "inlogen" : "Uitlogen"}</NavLink></li>
 
                 </ul>
             </nav>
             <Switch>
                 <Route exact path="/"><Home/></Route>
-                <Route path="/login"><Login toggle={toggleIsAuthenticated}/></Route>
+                <Route path="/login"><Login isAuth={ isAuthenticated} toggle={toggleIsAuthenticated}/></Route>
                 <Route path="/Blogpost">
                     {isAuthenticated === true ? <Blogpost/> : <Redirect to="/"/>}
                 </Route>
@@ -32,7 +32,7 @@ function App() {
 
             </Switch>
         </div>
-    );
+    )
 }
 
 export default App;
